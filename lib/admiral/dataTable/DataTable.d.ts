@@ -14,10 +14,12 @@ export declare type DataTableProps<RecordType> = {
     }>;
     config?: DataTableConfig<RecordType>;
     autoupdateTime?: number;
+    shouldHidePagination?: boolean;
 };
 export interface DataTableConfig<RecordType> extends Pick<TableProps<RecordType>, 'dndRows' | 'showSorterTooltip' | 'bordered' | 'size' | 'title' | 'footer'> {
     rowSelection?: DataTableRowSelectionConfig<RecordType>;
     autoupdateTime?: number;
+    shouldHidePagination?: boolean;
 }
 export declare type DataTableRowSelectionConfig<RecordType> = {
     render: ({ selectedRowKeys, selectedRows, refresh, }: {
@@ -29,4 +31,4 @@ export declare type DataTableRowSelectionConfig<RecordType> = {
 };
 export declare function DataTable<RecordType extends {
     id: number | string;
-}>({ resource, columns, locale, config, autoupdateTime, }: DataTableProps<RecordType>): JSX.Element;
+}>({ resource, columns, locale, config, autoupdateTime, shouldHidePagination, }: DataTableProps<RecordType>): JSX.Element;
