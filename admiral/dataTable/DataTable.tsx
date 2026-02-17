@@ -21,6 +21,7 @@ export type DataTableProps<RecordType> = {
     }>
     config?: DataTableConfig<RecordType>
     autoupdateTime?: number
+    shouldHidePagination?: boolean
 }
 
 export interface DataTableConfig<RecordType>
@@ -30,6 +31,7 @@ export interface DataTableConfig<RecordType>
     > {
     rowSelection?: DataTableRowSelectionConfig<RecordType>
     autoupdateTime?: number
+    shouldHidePagination?: boolean
 }
 
 export type DataTableRowSelectionConfig<RecordType> = {
