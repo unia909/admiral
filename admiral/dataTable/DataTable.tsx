@@ -51,6 +51,7 @@ export function DataTable<RecordType extends { id: number | string }>({
     locale,
     config,
     autoupdateTime,
+    shouldHidePagination = true,
 }: DataTableProps<RecordType>) {
     const { getList, reorderList } = useDataProvider()
     const [data, setData] = useState<RecordType[]>([])
@@ -285,8 +286,9 @@ export function DataTable<RecordType extends { id: number | string }>({
                 }}
                 sticky
                 pagination={
-                    !!total &&
-                    total > +urlState.page_size && {
+                    (!shouldHidePagination ||
+                    (!!total &&
+                    total > +urlState.page_size)) && {
                         current: +urlState.page,
                         pageSize: +urlState.page_size,
                         total,
