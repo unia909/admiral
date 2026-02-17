@@ -108,6 +108,7 @@ function makeIndexPage<RecordType extends { id: number | string } = any>(
                         config={config.index.tableConfig}
                         locale={{ table: tableLocale, pagination: paginationLocale }}
                         autoupdateTime={config.index.tableConfig?.autoupdateTime}
+                        shouldHidePagination={config.index.tableConfig?.shouldHidePagination}
                     />
                     {!!config.filter && (
                         <Filters
